@@ -1,0 +1,68 @@
+[
+    {
+        "id": "./Pages/Proj1",
+        "label": "Project 1",
+        "title": "HTML Tables and Forms",
+        "desc": "After having completed this project, I got familiar with HTML forms, JavaScript basic syntax (variable declaration, if-statements and loops), was able to successfully use its functions for getting information from HTML elements, and gathering it in one string for output. I have also familiarised myself with development tools provided inside Chromium."
+    },
+    {
+        "id": "./Pages/Proj2",
+        "label": "Project 2",
+        "title": "Tableless table in CSS",
+        "desc": "After having completed this project, I got familiar with tableless layouts in CSS, looked at some examples of how it is done, and uploaded my work to the PW web server to be hosted there."
+    },
+    {
+        "id": "./Pages/Proj41",
+        "label": "Project 3",
+        "title": "Sorting algorithms in JS",
+        "desc": "After having completed this project, I got familiar with JavaScript basic syntax for function definitions, as well as sorting algorithms. I was able to successfully use and implement these algorithms into a user-friendly HTML page using IDs."
+    },
+    {
+        "id": "./Pages",
+        "label": "Project 4",
+        "title": "Index page creation",
+        "desc": "After having completed this project, I had learned about responsive web design, the tools it is achievable with, learned classes used in Bootstrap frontend toolkit, as well as a JavaScript implementation of modifying classes and iterating, identifying elements using IDs and other attributes."
+    },
+    {
+        "id": "./Proj5",
+        "label": "Project 5",
+        "title": "AJAX Pagination",
+        "desc": "After having completed this project, I had learned about AJAX, how it is used, was able to implement it in my own page, as well as learned about some hidden issues that may arise when doing so."
+    },
+    {
+        "id": "./Proj6",
+        "label": "Project 6",
+        "title": "JSON",
+        "desc": "While doing this project, I had learned about JSON, and how it is used inside JS code to store, retrieve, and handle data. stringify, getItem, setItem, parse functions inside the global JSON object allow programmers to make handling hierarchical data like that much easier. The three provided examples explained to me in detail how these operations are done."
+    },
+    {
+        "id": "./Proj7",
+        "label": "Project 7",
+        "title": "JQuery",
+        "desc": "After having completed this project, I became familiar with jQuery and its use cases, which allow for more versatile and easy HTML manipulation from inside of JS, abstracting the programmer from lower-level details, as an easy to install library."
+    },
+    {
+        "id": "./Proj8",
+        "label": "Project 8",
+        "title": "JSON and JQuery",
+        "desc": "After having completed this project, I became familiar with jQuery and its use cases, which allow for more versatile and easy HTML manipulation from inside of JS, abstracting the programmer from lower-level details, as an easy to install library. I was also introduced to how JSON is used to handle and pass data through to the script, as well as implement date filtering using some string manipulation."
+    },
+    {
+        "id": "./Proj9",
+        "label": "Project 9",
+        "title": "AngularJS overview",
+        "desc": "After having made this project, I am now familiarized with AngularJS, its use cases, as well as have implemented its functionalities to improve and minimize my webpage’s code. It is a very versatile framework that it widely used in web development, so being familiar with it is of great help."
+    },
+    {
+        "id": "./Proj10",
+        "label": "Project 10",
+        "title": "AngularJS Examples",
+        "desc": "After having done this exercise, I familiarized myself with some essential parts of making webpages in AngularJS. Filtering is a powerful tool for manipulating data and displaying it in different ways, http requests are used for fetching and sending data from and to the server (or a local directory in examples provided so far), while routing allows users to navigate between views without reloading the entire page. All of these elements enhance the user experience and provide versatile tools for developers to build powerful and flexible web applications."
+    },
+    {
+        "id": "./Proj11",
+        "label": "Project 11",
+        "title": "CMS Installation and usage",
+        "desc": "Installation and usage of CMSes: Prestashop and Textpattern."
+    }
+]

@@ -1,0 +1,29 @@
+<html ng-app="countryApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script>
+
+        // angular.module() function is used to create a new module called "countryApp" and assign it to the variable countryApp. The empty array as the second argument indicates that this module has no dependencies.
+        var countryApp = angular.module('countryApp', []);
+        // controller has two parameters: $scope and $http
+        countryApp.controller('CountryListCtrl', function ($scope, $http) {
+            $http.get('countries.json').success(function (data) {
+                $scope.countries = data;
+            });
+        });
+    </script>
+</head>
+
+<!-- associate the controller "CountryListCtrl" with the current HTML element. -->
+
+<body ng-controller="CountryListCtrl">
+    <!-- ng-repeat directive to loop through each country in the countries array and display its name in an <li> tag with a {{}} expression -->
+    <ul>
+        <li ng-repeat="country in countries">{{country.name}}</li>
+    </ul>
+</body>
+
+</html>

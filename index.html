@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Advanced Internet Programming Project 12</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">AIP Projects' Directory</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Repositories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item"
+                                        href="https://github.com/illiapriadko/AIP_Proj_List">Project 4</a></li>
+                                <li><a class="dropdown-item" href="https://github.com/illiapriadko/AIP_Proj_5">Project
+                                        5</a></li>
+                                <li>
+                                <li><a class="dropdown-item"
+                                        href="https://github.com/illiapriadko/AIP_Proj_Latest/tree/53fd3e6199c69bab8a0f7f814337375bac4cef12">Project
+                                        7</a></li>
+                                <li>
+                                <li><a class="dropdown-item"
+                                        href="https://github.com/illiapriadko/AIP_Proj_Latest/tree/84d318296d6a77e3e106cfc208056633c974ba10">Project
+                                        8</a></li>
+                                <li>
+                                <li><a class="dropdown-item"
+                                        href="https://github.com/illiapriadko/AIP_Proj_Latest/tree/53fd3e6199c69bab8a0f7f814337375bac4cef12">Project
+                                        9</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <p class="dropdown-item disabled">Please note repositories for projects 7-9 are
+                                        snapshots of commits.</p>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <span class="navbar-text">
+                        Illia Priadko [309062]
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row" ng-app="myApp" ng-controller="myController">
+                <div class="col-12 col-md-12 col-lg-3" style="background-color: rgb(225, 247, 255);">
+                    <div class="px-5 py-3 my-5">
+                        <h1>Project 12: Reference</h1>
+                        <h3 class="text-muted">The index page for all completed 1DA1611:A Projects</h3>
+                        <div class="btn-group-vertical my-2 py-3 d-flex" role="group"
+                            aria-label="Vertical radio toggle button group">
+                            <button type="button" ng-repeat="button in buttons" ng-click="buttonClicked(button)"
+                                class="btn btn-outline-primary deschover">
+                                <!-- Expression with button name and date -->
+                                {{button.label+": "+button.title}}<span
+                                    class="deschovertext deschover-right">{{button.desc}}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-9 px-5">
+                    <div class="my-5">
+                        <a id="pdf-download" href="Proj12Report.pdf">Download Report PDF</a><br>
+                        <p class="my-2" id="description"></p>
+                    </div>
+                    <div id="main-content">
+                        <div class="text-center">
+                            <h1>Please select a project at the left of the screen.</h1>
+                            <p class="lead">This webpage is the final project for Advanced Internet Programming course,
+                                where all
+                                completed projects, as well as thei respective reports, are compiled and available to be
+                                viewed.</p>
+                            <button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">GitHub
+                                repository
+                                for
+                                this
+                                page</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+    <script>
+        const httpRequest = new XMLHttpRequest();
+        // my application to populate buttons
+        var app = angular.module('myApp', []);
+        app.controller('myController', function ($scope, $http) {
+            // fetch .json from directory
+            $http.get('./projects.json').then(function (response) {
+                $scope.buttons = response.data;
+            });
+            $scope.buttonClicked = function (button) {
+                // Handle button click event
+                loadDoc(button.id, button.desc);
+            };
+        });
+
+
+        //loadDoc function
+        function loadDoc(page, desc) {
+            var contentDiv = document.getElementById("main-content");
+            var iframe = document.createElement("iframe");
+            iframe.src = page; // Replace with the desired page URL
+            iframe.width = "100%";
+            iframe.height = "900";
+            contentDiv.innerHTML = ""; // Clear existing content
+            contentDiv.appendChild(iframe); // Append the iframe to the content div
+            document.getElementById("pdf-download").setAttribute("href", page + "/report.pdf");
+            document.getElementById("description").innerHTML = desc;
+        }
+    </script>
+
+</body>
+
+</html>

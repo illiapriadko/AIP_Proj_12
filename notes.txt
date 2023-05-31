@@ -1,0 +1,5 @@
+project 12 should include:
+- a pop up on hover, that will show a brief preview of the project;
+- report pdf download available for each project
+- main page always available, and the entire screen should be full of information
+- external info should be provided as well

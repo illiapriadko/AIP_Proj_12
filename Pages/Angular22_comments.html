@@ -1,0 +1,39 @@
+<html ng-app="countryApp">
+<!-- The ng-app directive is used to define the main AngularJS module for the application, which is named 'countryApp'. -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script>
+        // the AngularJS module is defined using the angular.module function. The [] parameter is used to specify that there are no dependencies for this module. A controller named 'CountryCtrl' is also defined using the countryApp.controller method.
+        var countryApp = angular.module('countryApp', []);
+        // The CountryCtrl controller has two dependencies, $scope and $http. The $http dependency is used to make a GET request to a file named 'countries.json'. When the request is successful, the response data is assigned to the $scope.countries property, making it available to the view.
+        countryApp.controller('CountryCtrl', ['$scope', '$http', function (scope, http) {
+            http.get('countries.json').success(function (data) {
+                scope.countries = data;
+            });
+        }]);
+    </script>
+</head>
+
+<!-- In the <body> section of the HTML file, the ng-controller directive is used to associate the CountryCtrl controller with the <body> element. -->
+
+<body ng-controller="CountryCtrl">
+    <!-- A search box is defined using an <input> element with the ng-model directive set to 'query'. This creates a two-way binding between the value of the search box and the $scope.query property. -->
+    Search:<input ng-model="query" type="text" />
+    <!-- A table is defined using the <table> element. The table header is defined using the <th> element and the table rows are generated using the ng-repeat directive. The ng-repeat directive iterates over the countries array, which was defined in the CountryCtrl controller. The | filter:query filter is applied to the ng-repeat directive, which filters the list of countries based on the value of $scope.query. -->
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Population</th>
+        </tr>
+        <!-- Each row of the table displays the name and population of a country using the {{}} syntax to display the properties of the country object. -->
+        <tr ng-repeat="country in countries | filter:query">
+            <td>{{country.name}}</td>
+            <td>{{country.population}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

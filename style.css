@@ -1,0 +1,35 @@
+/* deschover container */
+.deschover {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    /* If you want dots under the hoverable text */
+}
+
+/* deschover text */
+.deschover .deschovertext {
+    visibility: hidden;
+    width: 500px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+    /* Position the deschover text */
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: 120%;
+    margin-left: -60px;
+
+    /* Fade in deschover */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the deschover text when you mouse over the deschover container */
+.deschover:hover .deschovertext {
+    visibility: visible;
+    opacity: 1;
+}
